@@ -29,7 +29,7 @@ namespace DataAccess.Concrete.InMemory
 
         public void Delete(Product product)
         {
-            //LINQ
+            //LINQ - Language Integrated Query
             //Lambda
             Product productToDelete = _products.SingleOrDefault(p => p.ProductId == product.ProductId);
 
@@ -43,6 +43,7 @@ namespace DataAccess.Concrete.InMemory
 
         public void Update(Product product)
         {
+            //Gönderdiğim ürün id'sine sahip olan listedeki ürünü bul
             Product productToUpdate = _products.SingleOrDefault(p => p.ProductId == product.ProductId);
             productToUpdate.ProductName = product.ProductName;
             productToUpdate.CategoryId = product.CategoryId;
